@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+          margin: auto;
+          text-align: center;
+      }
+      .info{
+          width: 200px;
+          height: 30px;
+          text-align: center;
+          margin: 5px;
+          padding: 5px;
+          background-color:black;
+          border:crimson 5px 5px 5px 5px;
+          border-radius: 50%;
+          text-align: center;
+          color:white;
+          font-weight: bolder;
+          font-family: sans-serif;
+          font-style: italic;
+          display: inline-table !important;
+          /* display: flex; */
+          /* flex-wrap: wrap; */
+
+      }
+      #ide{
+          width: fit-content;
+          box-sizing: border-box;
+          border: black 3px;
+          background-color:coral ;
+          align-items: center !important;
+          text-align: center;
+          margin: 50px;
+      }
+  </style>
+    
+</head>
+<body>
+  <h1>this ia a survey form </h1>  
+  <div id="ide">
+    <ul> <% for(let i of student_list) {%>
+   <li>  <span class="info"><%= i.name %></span></li>
+   <li> <span class="info"><%= i.phone  %></span>   </li>
+   <li> <span class="info"><%= i.email %></span></li>
+   <li> <span class="info"><%= i.password %></span></li>
+   <li> <span class="info"><%= i.collage %></span></li>
+        <li><a href="/response-delete/?id=<%= i._id%>">delete</a> </li>
+     <% } %>
+  </ul> 
+  </div>
+  <div>
+      <form action="/home" method="post"><div>
+          <input  class="info"   type="text" name="name" placeholder="Enter your name " required>
+          <input  class="info"  type="number" name="phone" placeholder="Enter your phone number" required>
+          <input  class="info"  type="email" name="email" placeholder="Enter your email" required>
+          <input  class="info"  type="password"  name="password" placeholder="Enter your password" required>
+          <input  class="info"  type="text" name="collage" placeholder="Enter your collage name" required> 
+          <button class="info"   type="submit">submit</button>   
+    </div>
+      </form>
+  </div>
+</body>
+</html>
